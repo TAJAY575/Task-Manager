@@ -51,22 +51,6 @@ class Task:
     due_date: datetime   # Required
     status: TaskStatus   # Pending/In Progress/Completed
 
-
-## Project Structure 📁
-
-task-manager/
-├── app/
-│   ├── __init__.py
-│   ├── main.py           # FastAPI application
-│   ├── database.py       # Database configuration
-│   ├── config.py         # Settings
-│   ├── models/
-│   │   └── task.py      # Task models
-│   └── routers/
-│       └── tasks.py      # Task endpoints
-└── requirements.txt
-
-
 ## Dependencies 📚
 
 fastapi>=0.68.0
