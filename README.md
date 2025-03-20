@@ -20,10 +20,10 @@ A clean and efficient RESTful API built with FastAPI and SQLModel for managing t
 
 bash
 # Clone the repository
-git clone https://github.com/yourusername/task-manager-api.git
+git clone https://github.com/TAJAY575/Task-Manager.git
 
 # Navigate to project directory
-cd task-manager-api
+cd Task-Manager
 
 # Create virtual environment
 python -m venv myenv
@@ -31,6 +31,7 @@ python -m venv myenv
 # Activate virtual environment
 # For Windows:
 myenv\Scripts\activate
+
 # For macOS/Linux:
 source myenv/bin/activate
 
@@ -38,17 +39,7 @@ source myenv/bin/activate
 pip install -r requirements.txt
 
 # Run the main.py
-
-
-## API Endpoints 
-
-| Method | Endpoint           | Description         |
-|--------|--------------------|---------------------|
-| POST   | `/tasks`           | Create a new task   |
-| GET    | `/tasks`           | List all tasks      |
-| GET    | `/tasks/{task_id}` | Get a specific task |
-| PUT    | `/tasks/{task_id}` | Update a task       |
-| DELETE | `/tasks/{task_id}` | Delete a task       |
+press "F5" on keyboard
 
 ## Task Model 📝
 
