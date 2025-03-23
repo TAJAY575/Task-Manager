@@ -1,3 +1,4 @@
+from datetime import date
 from fastapi import APIRouter, Depends, HTTPException
 from sqlmodel import Session, select
 from typing import List
@@ -17,12 +18,8 @@ def create_task(task: CreateTask, session: Session = Depends(get_session)):
     return db_task
 
 @router.get("/tasks/", response_model=List[ReadTask])
-def read_tasks(
-    skip: int = 0,
-    limit: int = 100,
-    session: Session = Depends(get_session)
-):
-    tasks = session.exec(select(Task).offset(skip).limit(limit)).all()
+def read_tasks(session: Session = Depends(get_session)):
+    tasks = session.exec(select(Task)).all()
     return tasks
 
 @router.get("/tasks/{task_id}", response_model=ReadTask)
@@ -33,11 +30,7 @@ def read_task(task_id: int, session: Session = Depends(get_session)):
     return task
 
 @router.put("/tasks/{task_id}", response_model=ReadTask)
-def update_task(
-    task_id: int,
-    task_update: CreateTask,
-    session: Session = Depends(get_session)
-):
+def update_task(task_id: int,task_update: CreateTask,session: Session = Depends(get_session)):
     db_task = session.get(Task, task_id)
     if not db_task:
         raise HTTPException(status_code=404, detail="Task not found")
