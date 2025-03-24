@@ -1,13 +1,18 @@
+from contextlib import asynccontextmanager
 from fastapi import FastAPI
 import uvicorn
 from database import create_db_and_tables
 from routers import tasks
 
-app = FastAPI(title="Task Manager API")
-
-@app.on_event("startup")
-def on_startup():
+# Lifespan context manager to handle lifecycle
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    print("Starting up...")
     create_db_and_tables()
+    yield
+    pass
+    
+app = FastAPI(lifespan=lifespan, title="Task Manager API")
 
 # Include router without prefix
 app.include_router(tasks.router, tags=["tasks"])

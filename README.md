@@ -86,8 +86,8 @@ The API includes comprehensive error handling:
 
 ## Future Enhancements 🚀
 
--  ✔  Task categories
-- [ ] Priority levels
+- ✔Task categories
+- ✔ Priority levels
 - [ ] Search functionality
 - [ ] Task filtering
 - [ ] Task sorting
