@@ -1,0 +1,32 @@
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: medium;
+    background-color: bisque;
+    margin: auto;
+    padding: auto;
+}
+
+h1{
+    text-align: center;
+    color: aquamarine;
+}
+
+nav{
+    display: block;
+    background-color: gray;
+    width: auto;
+    height: 50px;
+}
+a{
+    line-height: 45px;
+    color: white;
+    margin: 0 5% 0 5% ;
+    text-decoration: none;
+    font-size: large;
+}
+a :hover {
+    background-color: black;
+}
+a :active {
+    background-color: black;
+}
